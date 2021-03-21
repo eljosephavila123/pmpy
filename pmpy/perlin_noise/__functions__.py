@@ -1,6 +1,8 @@
 import numpy as np
 from scipy import special
 import scipy as sp
+
+
 def norm_to_uniform(im, scale=None):
     if scale is None:
         scale = [im.min(), im.max()]
@@ -47,7 +49,7 @@ def binary_medium(noise):
                 noise[x][y]=1
     return noise
 
-def generate_fractal_noise_2d(shape, res, octaves=2, persistence=10):
+def generate_fractal_noise_2d(shape, res, octaves=1, persistence=2, porosity=0.5):
     noise = np.zeros(shape)
     frequency = 1
     amplitude = 1
@@ -57,12 +59,9 @@ def generate_fractal_noise_2d(shape, res, octaves=2, persistence=10):
         amplitude *= persistence
  
     noise = norm_to_uniform(noise, scale=[0, 1])
-    return noise  > 0.50
-import matplotlib.pyplot as plt
-im=generate_fractal_noise_2d([100,100],[10,10])
-plt.show(block=False)
-plt.imshow(im)
-plt.pause(1000)
+    return noise  > porosity
+
+
 
 
 
