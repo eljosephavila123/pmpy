@@ -1,6 +1,6 @@
-# PMPY
+# Package Generation Porous Media
 
-# Examples
+## Examples
 
-# 2D
+###  2D
 ![](docs/img/2D_PM.png)
