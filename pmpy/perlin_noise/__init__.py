@@ -1,1 +1,2 @@
 from .__functions__ import generate_fractal_noise_2d
+from .__functions__ import generate_fractal_noise_3d
